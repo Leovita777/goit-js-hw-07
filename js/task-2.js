@@ -26,6 +26,7 @@ const images = [
 ];
 
 const gallery = document.querySelector('ul.gallery');
+const arr = [];
 
 for (const image of images) {
   const img = document.createElement('img');
@@ -35,6 +36,7 @@ for (const image of images) {
   const li = document.createElement('li');
 
   li.append(img);
-
   gallery.append(li);
 }
+
+gallery.append(...arr);
