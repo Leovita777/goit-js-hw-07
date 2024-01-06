@@ -26,17 +26,17 @@ const images = [
 ];
 
 const gallery = document.querySelector('ul.gallery');
-const arr = [];
+const fragment = document.createDocumentFragment();
 
 for (const image of images) {
-  const img = document.createElement('img');
-  img.src = image.url;
-  img.alt = image.alt;
+  const imgElement = document.createElement('img');
+  imgElement.src = image.url;
+  imgElement.alt = image.alt;
 
-  const li = document.createElement('li');
+  const listItem = document.createElement('li');
+  listItem.appendChild(imgElement);
 
-  li.append(img);
-  gallery.append(li);
+  fragment.appendChild(listItem);
 }
 
-gallery.append(...arr);
+gallery.appendChild(fragment);

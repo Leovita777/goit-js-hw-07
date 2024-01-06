@@ -1,5 +1,4 @@
 const color = document.querySelector('.color');
-const changeColor = document.querySelector('.change-color');
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
@@ -15,4 +14,6 @@ function changeColorButton() {
   color.textContent = randomColor;
 }
 
-changeColor.addEventListener('click', changeColorButton);
+document
+  .querySelector('.change-color')
+  .addEventListener('click', changeColorButton);

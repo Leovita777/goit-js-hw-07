@@ -1,14 +1,11 @@
 const loginForm = document.querySelector('.login-form');
-const emailInput = document.querySelector(".login-form input[name='email']");
-const passwordInput = document.querySelector(
-  ".login-form input[name='password']",
-);
 
 function handleSubmit(event) {
   event.preventDefault();
 
-  const email = emailInput.value.trim();
-  const password = passwordInput.value.trim();
+  const elements = event.target.elements;
+  const email = elements['email'].value.trim();
+  const password = elements['password'].value.trim();
 
   if (email === '' || password === '') {
     alert('All form fields must be filled in');
